@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.removed {
+  display: none;
+}
+
+#view {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  display: none;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+
+#modelSelect {
+  display: none;
+}
+
+.title {
+  width: 100%;
+  height: 100px;
+  text-align: center;
+  line-height: 50px;
+}
+
+.func {
+  height: 50px;
+  width: 100%;
+  margin: 0;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+}
+
+#screenshotBtn {
+  width: 20%;
+  height: 40px;
+  outline: none;
+  font-size: 20px;
+  margin-top: 10px;
+  border-radius: 5px;
+  border: 1px solid #b3b3b3;
+}
+
+#webcamContainer {
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+#resultContainer {
+  width: 50%;
+  align-items: center;
+  justify-content: center;
+}
+
+#reloadHint {
+  color: red;
+  display: none;
+}
+
+#toggle {
+  position: relative;
+  display: none;
+  width: 90px;
+  height: 34px;
+}
+
+#toggle input {
+  display: none;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked+.slider {
+  background-color: #2196F3;
+}
+
+/* shift pixel */
+input:checked+.slider:before {
+  -webkit-transform: translateX(56px);
+  -ms-transform: translateX(56px);
+  transform: translateX(56px);
+}
+
+.on {
+  display: none;
+  color: white;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  font-size: 10px;
+  font-family: Verdana, sans-serif;
+}
+
+.off {
+  color: white;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  font-size: 10px;
+  font-family: Verdana, sans-serif;
+}
+
+input:checked+.slider .on {
+  display: block;
+}
+
+input:checked+.slider .off {
+  display: none;
+}
+
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}

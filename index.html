@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Import TensorFlow.js library -->
+    <script src="./lib/tfjs@1.2" type="text/javascript"></script>
+
+    <!-- Import bodypix model -->
+    <script src="./lib/body-pix@2.0"></script>
+
+</head>
+
+<body>
+    <button id="webcamButton">新增相機權限</button>
+
+    <div id="modelSelect">
+        <select id="modelOption">
+            <option value="ResNet50">ResNet</option>
+            <option value="MobileNetV1" selected>MobileNet</option>
+        </select>
+        &nbsp;&nbsp;
+        <button id="ReloadButton">Reload</button>
+        <span id="reloadHint">reloading...</span>
+    </div>
+
+    <div id="view">
+        <div id="webcamContainer">
+            <h1 class="title">即時畫面</h1>
+
+            <canvas id="stream"></canvas>
+
+            <div class="func">
+                <h3 id="outline">outline&nbsp;</h3>
+                <label id="toggle">
+                    <input id="check" type="checkbox">
+                    <div class="slider round">
+                        <span class="on">ON</span>
+                        <span class="off">OFF</span>
+                    </div>
+                </label>
+            </div>
+        </div>
+
+        <div id="resultContainer">
+            <h1 class="title">修改畫面</h1>
+
+            <canvas id="result"></canvas>
+
+            <div class="func">
+                <button id="screenshotBtn">Screenshot</button>
+            </div>
+        </div>
+    </div>
+    <div id="fps">
+        fps:0
+    </div>
+    <script src="script.js" defer></script>
+</body>
+
+</html>
